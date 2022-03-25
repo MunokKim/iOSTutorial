@@ -11,6 +11,7 @@
 		6B41E40527ED880D006B0FFD /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 6B41E40427ED880D006B0FFD /* Apollo */; };
 		6B41E40727ED880D006B0FFD /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 6B41E40627ED880D006B0FFD /* ApolloWebSocket */; };
 		6B41E40C27ED9FC5006B0FFD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41E40B27ED9FC5006B0FFD /* API.swift */; };
+		6B41E40E27EDA206006B0FFD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41E40D27EDA206006B0FFD /* Network.swift */; };
 		9B0705F923AC34CB00DCA904 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */; };
 		9B4AA8AA239BDDB7003E1300 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */; };
 		9B685F54238BE6D70084DA15 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B685F53238BE6D70084DA15 /* KeychainSwift */; };
@@ -30,6 +31,7 @@
 		6B41E40927ED9C8D006B0FFD /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		6B41E40A27ED9EE1006B0FFD /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
 		6B41E40B27ED9FC5006B0FFD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		6B41E40D27EDA206006B0FFD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		9B685F55238BE71F0084DA15 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				9B8B0F00237CE6AB001326EB /* Assets.xcassets */,
 				9B8B0F02237CE6AB001326EB /* LaunchScreen.storyboard */,
 				9B8B0F05237CE6AB001326EB /* Info.plist */,
+				6B41E40D27EDA206006B0FFD /* Network.swift */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B41E40E27EDA206006B0FFD /* Network.swift in Sources */,
 				9B685F56238BE71F0084DA15 /* LoginViewController.swift in Sources */,
 				9B8B0EF6237CE6A8001326EB /* AppDelegate.swift in Sources */,
 				9B8B0EF8237CE6A8001326EB /* SceneDelegate.swift in Sources */,
