@@ -8,15 +8,20 @@ public final class LaunchListQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query LaunchList {
-      launches {
+    query LaunchList($cursor: String) {
+      launches(after: $cursor) {
         __typename
-        cursor
         hasMore
+        cursor
         launches {
           __typename
           id
           site
+          mission {
+            __typename
+            name
+            missionPatch(size: SMALL)
+          }
         }
       }
     }
@@ -24,7 +29,14 @@ public final class LaunchListQuery: GraphQLQuery {
 
   public let operationName: String = "LaunchList"
 
-  public init() {
+  public var cursor: String?
+
+  public init(cursor: String? = nil) {
+    self.cursor = cursor
+  }
+
+  public var variables: GraphQLMap? {
+    return ["cursor": cursor]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -32,7 +44,7 @@ public final class LaunchListQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("launches", type: .nonNull(.object(Launch.selections))),
+        GraphQLField("launches", arguments: ["after": GraphQLVariable("cursor")], type: .nonNull(.object(Launch.selections))),
       ]
     }
 
@@ -61,8 +73,8 @@ public final class LaunchListQuery: GraphQLQuery {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("cursor", type: .nonNull(.scalar(String.self))),
           GraphQLField("hasMore", type: .nonNull(.scalar(Bool.self))),
+          GraphQLField("cursor", type: .nonNull(.scalar(String.self))),
           GraphQLField("launches", type: .nonNull(.list(.object(Launch.selections)))),
         ]
       }
@@ -73,8 +85,8 @@ public final class LaunchListQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(cursor: String, hasMore: Bool, launches: [Launch?]) {
-        self.init(unsafeResultMap: ["__typename": "LaunchConnection", "cursor": cursor, "hasMore": hasMore, "launches": launches.map { (value: Launch?) -> ResultMap? in value.flatMap { (value: Launch) -> ResultMap in value.resultMap } }])
+      public init(hasMore: Bool, cursor: String, launches: [Launch?]) {
+        self.init(unsafeResultMap: ["__typename": "LaunchConnection", "hasMore": hasMore, "cursor": cursor, "launches": launches.map { (value: Launch?) -> ResultMap? in value.flatMap { (value: Launch) -> ResultMap in value.resultMap } }])
       }
 
       public var __typename: String {
@@ -86,21 +98,21 @@ public final class LaunchListQuery: GraphQLQuery {
         }
       }
 
-      public var cursor: String {
-        get {
-          return resultMap["cursor"]! as! String
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "cursor")
-        }
-      }
-
       public var hasMore: Bool {
         get {
           return resultMap["hasMore"]! as! Bool
         }
         set {
           resultMap.updateValue(newValue, forKey: "hasMore")
+        }
+      }
+
+      public var cursor: String {
+        get {
+          return resultMap["cursor"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "cursor")
         }
       }
 
@@ -121,6 +133,7 @@ public final class LaunchListQuery: GraphQLQuery {
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
             GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
             GraphQLField("site", type: .scalar(String.self)),
+            GraphQLField("mission", type: .object(Mission.selections)),
           ]
         }
 
@@ -130,8 +143,8 @@ public final class LaunchListQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: GraphQLID, site: String? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Launch", "id": id, "site": site])
+        public init(id: GraphQLID, site: String? = nil, mission: Mission? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Launch", "id": id, "site": site, "mission": mission.flatMap { (value: Mission) -> ResultMap in value.resultMap }])
         }
 
         public var __typename: String {
@@ -158,6 +171,64 @@ public final class LaunchListQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "site")
+          }
+        }
+
+        public var mission: Mission? {
+          get {
+            return (resultMap["mission"] as? ResultMap).flatMap { Mission(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "mission")
+          }
+        }
+
+        public struct Mission: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["Mission"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("name", type: .scalar(String.self)),
+              GraphQLField("missionPatch", arguments: ["size": "SMALL"], type: .scalar(String.self)),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(name: String? = nil, missionPatch: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Mission", "name": name, "missionPatch": missionPatch])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var name: String? {
+            get {
+              return resultMap["name"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "name")
+            }
+          }
+
+          public var missionPatch: String? {
+            get {
+              return resultMap["missionPatch"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "missionPatch")
+            }
           }
         }
       }
