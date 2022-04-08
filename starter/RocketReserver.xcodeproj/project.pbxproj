@@ -12,6 +12,7 @@
 		6B41E40727ED880D006B0FFD /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 6B41E40627ED880D006B0FFD /* ApolloWebSocket */; };
 		6B41E40C27ED9FC5006B0FFD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41E40B27ED9FC5006B0FFD /* API.swift */; };
 		6B41E40E27EDA206006B0FFD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41E40D27EDA206006B0FFD /* Network.swift */; };
+		6B41FED927FFDC5C00AFA6AB /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6B41FED827FFDC5C00AFA6AB /* Login.graphql */; };
 		9B0705F923AC34CB00DCA904 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */; };
 		9B4AA8AA239BDDB7003E1300 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */; };
 		9B685F54238BE6D70084DA15 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B685F53238BE6D70084DA15 /* KeychainSwift */; };
@@ -32,6 +33,7 @@
 		6B41E40A27ED9EE1006B0FFD /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
 		6B41E40B27ED9FC5006B0FFD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		6B41E40D27EDA206006B0FFD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		6B41FED827FFDC5C00AFA6AB /* Login.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
 		9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		9B685F55238BE71F0084DA15 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				6B41E40B27ED9FC5006B0FFD /* API.swift */,
 				6B41E40927ED9C8D006B0FFD /* schema.json */,
 				6B41E40A27ED9EE1006B0FFD /* LaunchList.graphql */,
+				6B41FED827FFDC5C00AFA6AB /* Login.graphql */,
 				9B8B0EF5237CE6A8001326EB /* AppDelegate.swift */,
 				9B8B0EF7237CE6A8001326EB /* SceneDelegate.swift */,
 				9B685F55238BE71F0084DA15 /* LoginViewController.swift */,
@@ -173,6 +176,7 @@
 				9B8B0F04237CE6AB001326EB /* LaunchScreen.storyboard in Resources */,
 				9B8B0F01237CE6AB001326EB /* Assets.xcassets in Resources */,
 				9B8B0EFF237CE6A8001326EB /* Main.storyboard in Resources */,
+				6B41FED927FFDC5C00AFA6AB /* Login.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
