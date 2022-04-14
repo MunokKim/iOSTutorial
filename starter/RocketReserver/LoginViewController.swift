@@ -42,33 +42,34 @@ class LoginViewController: UIViewController {
             return
         }
         
-//        Network.shared.apollo.perform(mutation: LoginMutation(email: email)) { [weak self] result in
-//          defer {
-//            // Re-enable the submit button when this scope exits
-//            self?.enableSubmitButton(true)
-//          }
-//
-//          switch result {
-//          case .failure(let error):
-//            self?.showAlert(title: "Network Error",
-//                            message: error.localizedDescription)
-//          case .success(let graphQLResult):
-//
-//            if let token = graphQLResult.data?.login {
-//                let keychain = KeychainSwift()
-//                keychain.set(token, forKey: LoginViewController.loginKeychainKey)
-//                self?.dismiss(animated: true)
-//            }
-//
-//            if let errors = graphQLResult.errors {
-//              let message = errors
-//                             .map { $0.localizedDescription }
-//                             .joined(separator: "\n")
-//              self?.showAlert(title: "GraphQL Error(s)",
-//                              message: message)
-//            }
-//          }
-//        }
+        Network.shared.apollo.perform(mutation: LoginMutation(email: email)) { [weak self] result in
+          defer {
+            // Re-enable the submit button when this scope exits
+            self?.enableSubmitButton(true)
+          }
+
+          switch result {
+          case .failure(let error):
+            self?.showAlert(title: "Network Error",
+                            message: error.localizedDescription)
+          case .success(let graphQLResult):
+          
+              if let token = graphQLResult.data?.login?.token {
+              // TODO: Store the token securely
+                let keychain = KeychainSwift()
+                keychain.set(token, forKey: LoginViewController.loginKeychainKey)
+                self?.dismiss(animated: true)
+            }
+
+            if let errors = graphQLResult.errors {
+              let message = errors
+                             .map { $0.localizedDescription }
+                             .joined(separator: "\n")
+              self?.showAlert(title: "GraphQL Error(s)",
+                              message: message)
+            }
+          }
+        }
     }
     
     private func validate(email: String) -> Bool {
