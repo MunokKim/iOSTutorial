@@ -18,6 +18,7 @@
 		6B5E4103280876B200344ABC /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E4102280876B200344ABC /* NetworkInterceptorProvider.swift */; };
 		6B5E410528088B8F00344ABC /* BookTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6B5E410428088B8F00344ABC /* BookTrip.graphql */; };
 		6B5E410728088CCC00344ABC /* CancelTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6B5E410628088CCC00344ABC /* CancelTrip.graphql */; };
+		6B5E410B2808971400344ABC /* TripsBooked.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6B5E410A2808971400344ABC /* TripsBooked.graphql */; };
 		9B0705F923AC34CB00DCA904 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */; };
 		9B4AA8AA239BDDB7003E1300 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */; };
 		9B685F54238BE6D70084DA15 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B685F53238BE6D70084DA15 /* KeychainSwift */; };
@@ -44,6 +45,7 @@
 		6B5E4102280876B200344ABC /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
 		6B5E410428088B8F00344ABC /* BookTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BookTrip.graphql; sourceTree = "<group>"; };
 		6B5E410628088CCC00344ABC /* CancelTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CancelTrip.graphql; sourceTree = "<group>"; };
+		6B5E410A2808971400344ABC /* TripsBooked.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = TripsBooked.graphql; sourceTree = "<group>"; };
 		9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		9B685F55238BE71F0084DA15 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				9B8B0EF7237CE6A8001326EB /* SceneDelegate.swift */,
 				9B685F55238BE71F0084DA15 /* LoginViewController.swift */,
 				9B8B0EF9237CE6A8001326EB /* LaunchesViewController.swift */,
+				6B5E410A2808971400344ABC /* TripsBooked.graphql */,
 				9B8B0EFB237CE6A8001326EB /* DetailViewController.swift */,
 				9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */,
 				9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */,
@@ -192,6 +195,7 @@
 				6B5E410528088B8F00344ABC /* BookTrip.graphql in Resources */,
 				9B8B0F01237CE6AB001326EB /* Assets.xcassets in Resources */,
 				6B5E410728088CCC00344ABC /* CancelTrip.graphql in Resources */,
+				6B5E410B2808971400344ABC /* TripsBooked.graphql in Resources */,
 				9B8B0EFF237CE6A8001326EB /* Main.storyboard in Resources */,
 				6B5E40FF2808606900344ABC /* LaunchDetails.graphql in Resources */,
 				6B41FED927FFDC5C00AFA6AB /* Login.graphql in Resources */,
